@@ -63,7 +63,7 @@ k\sqrt{\frac{n}{n+1}}\exp(s_{n+1/2}O_n).
 Here `D_n` and `O_n` are arithmetic modulation channels generated from a complex Mangoldt phase field. The exact implementation is in:
 
 ```text
-rot_mangoldt_jacobi_gue_validation_v3_exact.py
+rot_mangoldt_jacobi_gue_validation.py
 ```
 
 and uses the same discovery-code path used to obtain the benchmark result.
@@ -215,7 +215,7 @@ NV_{\rm GUE}<NV_{\rm Poisson}.
 The exact validation command is:
 
 ```bash
-python rot_mangoldt_jacobi_gue_validation_v3_exact.py --N 8000 --prime-max 4000 --s0 0.60 --sigma -1.0 --shape cos4 --controls 50 --out-dir rot_gue_N8000_exact_validation
+python rot_mangoldt_jacobi_gue_validation.py --N 8000 --prime-max 4000 --s0 0.60 --sigma -1.0 --shape cos4 --controls 50 --out-dir rot_gue_N8000_exact_validation
 ```
 
 The validated result is:
@@ -278,13 +278,13 @@ tqdm
 ### Quick smoke test
 
 ```bash
-python rot_mangoldt_jacobi_gue_validation_v3_exact.py --N 1000 --prime-max 500 --controls 2 --out-dir smoke_test
+python rot_mangoldt_jacobi_gue_validation.py --N 1000 --prime-max 500 --controls 2 --out-dir smoke_test
 ```
 
 ### Exact `N=8000` check without controls
 
 ```bash
-python rot_mangoldt_jacobi_gue_validation_v3_exact.py --N 8000 --prime-max 4000 --s0 0.60 --sigma -1.0 --shape cos4 --controls 0 --out-dir rot_gue_N8000_exact_check
+python rot_mangoldt_jacobi_gue_validation.py --N 8000 --prime-max 4000 --s0 0.60 --sigma -1.0 --shape cos4 --controls 0 --out-dir rot_gue_N8000_exact_check
 ```
 
 Expected Mangoldt-only output:
@@ -296,7 +296,7 @@ MANGOLDT score=1.118734526821640e-01 KS=1.092593767024393e-01 r=5.96985924020275
 ### Full `N=8000` control validation
 
 ```bash
-python rot_mangoldt_jacobi_gue_validation_v3_exact.py --N 8000 --prime-max 4000 --s0 0.60 --sigma -1.0 --shape cos4 --controls 50 --out-dir rot_gue_N8000_exact_validation
+python rot_mangoldt_jacobi_gue_validation.py --N 8000 --prime-max 4000 --s0 0.60 --sigma -1.0 --shape cos4 --controls 50 --out-dir rot_gue_N8000_exact_validation
 ```
 
 This runs 50 controls per mode across four modes, for 200 total controls.
